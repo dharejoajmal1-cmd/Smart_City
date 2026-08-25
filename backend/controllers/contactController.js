@@ -1,0 +1,10 @@
+const ContactMessage=require('../models/ContactMessage');
+const Property=require('../models/Property');
+const ApiError=require('../utils/ApiError');
+const ApiResponse=require('../utils/ApiResponse');
+const asyncHandler=(fn)=>(req,res,next)=>Promise.resolve(fn(req,res,next)).catch(next);
+const createContact=asyncHandler(async(req,res)=>{const {name,email,phone,message,property}=req.body;if(!name||!email||!message) throw new ApiError(400,'Name, email and message are required');if(property&&!await Property.exists({_id:property})) throw new ApiError(404,'Selected property was not found');const item=await ContactMessage.create({name,email,phone,message,property:property||null});res.status(201).json(new ApiResponse(201,'Message sent successfully',{message:item}));});
+const listContacts=asyncHandler(async(req,res)=>{const messages=await ContactMessage.find().sort({createdAt:-1}).populate('property','title');res.json(new ApiResponse(200,'Contact messages fetched successfully',{messages}));});
+const updateContactStatus=asyncHandler(async(req,res)=>{const {status}=req.body;if(!['new','contacted','closed'].includes(status)) throw new ApiError(400,'Invalid message status');const item=await ContactMessage.findByIdAndUpdate(req.params.id,{status},{new:true}).populate('property','title');if(!item) throw new ApiError(404,'Message not found');res.json(new ApiResponse(200,'Message status updated successfully',{message:item}));});
+const deleteContact=asyncHandler(async(req,res)=>{const item=await ContactMessage.findByIdAndDelete(req.params.id);if(!item) throw new ApiError(404,'Message not found');res.json(new ApiResponse(200,'Message deleted successfully',{}));});
+module.exports={createContact,listContacts,updateContactStatus,deleteContact};

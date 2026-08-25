@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#0f2f4f"/><stop offset="1" stop-color="#1d5b8c"/></linearGradient><linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9bd7a"/><stop offset=".5" stop-color="#b08d3e"/><stop offset="1" stop-color="#7d5f22"/></linearGradient></defs>
+<rect width="1200" height="760" fill="url(#sky)"/><circle cx="910" cy="150" r="82" fill="#d9bd7a" opacity=".28"/>
+<path d="M0 560 C170 490 270 530 420 500 C600 464 700 540 870 500 C1010 466 1110 500 1200 470 V760 H0Z" fill="#0a1f36"/>
+<path d="M0 625 C180 580 310 620 470 585 C650 545 810 630 970 585 C1070 558 1140 570 1200 560 V760 H0Z" fill="#071d33"/>
+<!-- modern Jamshoro-inspired housing community -->
+<g stroke="#b08d3e" stroke-width="5" stroke-linejoin="round">
+ <path d="M90 570V430l110-90 110 90v140Z" fill="#f7f3e6"/><path d="M62 438 200 320l138 118-24 25-114-95-114 95Z" fill="url(#gold)"/>
+ <path d="M145 570V485h55v85" fill="#0f2f4f"/><path d="M220 450h45v55h-45z" fill="#a9c3d8" stroke="#0f2f4f"/>
+ <path d="M385 570V400l130-105 130 105v170Z" fill="#f8f6ed"/><path d="m350 410 165-145 165 145-25 27-140-123-140 123Z" fill="url(#gold)"/>
+ <path d="M455 570v-105h60v105" fill="#0f2f4f"/><path d="M545 405h65v62h-65z" fill="#a9c3d8" stroke="#0f2f4f"/>
+ <path d="M735 570V445l95-75 95 75v125Z" fill="#f7f3e6"/><path d="m710 450 120-98 120 98-20 23-100-82-100 82Z" fill="url(#gold)"/>
+ <path d="M785 570v-82h50v82" fill="#0f2f4f"/><path d="M850 445h42v45h-42z" fill="#a9c3d8" stroke="#0f2f4f"/>
+</g>
+<!-- palm trees / green belt -->
+<g fill="none" stroke="#b08d3e" stroke-width="7" stroke-linecap="round"><path d="M1040 570V410"/><path d="M1040 420c-45-35-60-28-70-22M1040 420c38-38 58-35 75-30M1040 420c-10-50 5-62 18-72M1040 420c-28-38-40-38-55-35"/></g>
+<path d="M0 700 C280 650 450 720 700 670 C900 630 1030 690 1200 650" fill="none" stroke="#b08d3e" stroke-width="7" opacity=".7"/>
+<text x="70" y="105" fill="#fff" font-family="Georgia,serif" font-size="48" font-weight="700">Smart City Jamshoro</text>
+<text x="72" y="145" fill="#cba55f" font-family="Arial,sans-serif" font-size="22" letter-spacing="4">PLANNED • GREEN • CONNECTED</text>
+</svg>

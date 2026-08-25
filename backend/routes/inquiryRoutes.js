@@ -1,0 +1,12 @@
+const express=require('express');
+const {submitInquiry,getAllInquiries,getInquiry,updateInquiry,updateInquiryStatus,deleteInquiry}=require('../controllers/inquiryController');
+const {protect}=require('../middleware/auth');
+const {admin}=require('../middleware/admin');
+const router=express.Router();
+router.post('/',protect,submitInquiry);
+router.get('/',protect,getAllInquiries);
+router.get('/:id',protect,getInquiry);
+router.put('/:id',protect,updateInquiry);
+router.put('/:id/status',protect,admin,updateInquiryStatus);
+router.delete('/:id',protect,admin,deleteInquiry);
+module.exports=router;

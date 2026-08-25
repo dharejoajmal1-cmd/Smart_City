@@ -1,0 +1,10 @@
+const express=require('express');
+const {createContact,listContacts,updateContactStatus,deleteContact}=require('../controllers/contactController');
+const {protect}=require('../middleware/auth');
+const {admin}=require('../middleware/admin');
+const router=express.Router();
+router.post('/',createContact);
+router.get('/',protect,admin,listContacts);
+router.put('/:id/status',protect,admin,updateContactStatus);
+router.delete('/:id',protect,admin,deleteContact);
+module.exports=router;

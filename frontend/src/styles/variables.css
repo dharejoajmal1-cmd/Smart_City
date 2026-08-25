@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Smart City Jamshoro — Design Tokens
+   Professional Navy & Slate theme
+   ========================================================================== */
+:root {
+  --scj-primary: #0f2f4f;       /* deep corporate navy */
+  --scj-primary-dark: #0a1f36;  /* darker navy for hover states */
+  --scj-secondary: #1d5b8c;     /* supporting steel blue */
+  --scj-gold: #b08d3e;          /* muted brass accent (used sparingly) */
+  --scj-gold-light: #cba55f;
+  --scj-bg: #f4f6f8;            /* cool neutral page background */
+  --scj-card: #ffffff;
+  --scj-text: #1c2733;
+  --scj-text-muted: #5b6b7a;
+  --scj-border: #e2e6ea;
+
+  --scj-radius-sm: 6px;
+  --scj-radius-md: 12px;
+  --scj-radius-lg: 18px;
+
+  --scj-shadow-sm: 0 2px 8px rgba(15, 47, 79, 0.06);
+  --scj-shadow-md: 0 8px 24px rgba(15, 47, 79, 0.10);
+  --scj-shadow-lg: 0 16px 40px rgba(15, 47, 79, 0.14);
+
+  --scj-gradient-hero: linear-gradient(135deg, #0a1f36 0%, #0f2f4f 55%, #1d5b8c 100%);
+  --scj-gradient-gold: linear-gradient(120deg, #b08d3e 0%, #cba55f 50%, #b08d3e 100%);
+
+  --scj-font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --scj-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}

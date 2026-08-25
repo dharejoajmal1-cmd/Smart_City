@@ -1,0 +1,14 @@
+const express=require('express');
+const {updateProfile,changePassword,getAllUsers,getUserById,updateUserRole,deleteUser,uploadAvatar}=require('../controllers/userController');
+const {protect}=require('../middleware/auth');
+const {admin}=require('../middleware/admin');
+const upload=require('../middleware/upload');
+const router=express.Router();
+router.put('/profile',protect,updateProfile);
+router.post('/avatar',protect,upload.single('avatar'),uploadAvatar);
+router.put('/change-password',protect,changePassword);
+router.get('/',protect,admin,getAllUsers);
+router.get('/:id',protect,admin,getUserById);
+router.put('/:id/role',protect,admin,updateUserRole);
+router.delete('/:id',protect,admin,deleteUser);
+module.exports=router;

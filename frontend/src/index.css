@@ -1,0 +1,301 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap");
+@import "bootstrap/dist/css/bootstrap.min.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "./styles/variables.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--scj-font-body);
+  color: var(--scj-text);
+  background-color: var(--scj-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-family: var(--scj-font-display);
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-scj-primary {
+  color: var(--scj-primary) !important;
+}
+.text-scj-gold {
+  color: var(--scj-gold) !important;
+}
+.bg-scj-primary {
+  background-color: var(--scj-primary) !important;
+}
+.bg-scj-bg {
+  background-color: var(--scj-bg) !important;
+}
+
+/* Buttons -------------------------------------------------------------- */
+.btn-scj-primary {
+  background-color: var(--scj-primary);
+  border-color: var(--scj-primary);
+  color: #fff;
+  font-weight: 600;
+  border-radius: var(--scj-radius-sm);
+  padding: 0.65rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.btn-scj-primary:hover {
+  background-color: var(--scj-primary-dark);
+  border-color: var(--scj-primary-dark);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: var(--scj-shadow-md);
+}
+
+.btn-scj-gold {
+  background: var(--scj-gradient-gold);
+  border: none;
+  color: var(--scj-primary-dark);
+  font-weight: 700;
+  border-radius: var(--scj-radius-sm);
+  padding: 0.65rem 1.5rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-scj-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--scj-shadow-md);
+  color: var(--scj-primary-dark);
+}
+
+.btn-scj-outline {
+  background: transparent;
+  border: 1.5px solid var(--scj-primary);
+  color: var(--scj-primary);
+  font-weight: 600;
+  border-radius: var(--scj-radius-sm);
+  padding: 0.6rem 1.5rem;
+  transition: all 0.15s ease;
+}
+.btn-scj-outline:hover {
+  background: var(--scj-primary);
+  color: #fff;
+}
+
+/* Cards ------------------------------------------------------------------ */
+.scj-card {
+  background: var(--scj-card);
+  border: 1px solid var(--scj-border);
+  border-radius: var(--scj-radius-md);
+  box-shadow: var(--scj-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.scj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--scj-shadow-md);
+}
+
+.scj-section {
+  padding: 4.5rem 0;
+}
+@media (max-width: 768px) {
+  .scj-section {
+    padding: 3rem 0;
+  }
+}
+
+.scj-eyebrow {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--scj-gold);
+}
+
+.scj-divider-gold {
+  width: 64px;
+  height: 3px;
+  background: var(--scj-gradient-gold);
+  border-radius: 2px;
+}
+
+/* Focus visibility (accessibility) --------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--scj-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Phase 3 — Brand + AI assistant polish
+   ----------------------------------------------------------------------- */
+.scj-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--scj-primary);
+  line-height: 1;
+}
+.scj-brand-logo:hover { color: var(--scj-primary); }
+.scj-brand-logo__mark { width: 48px; height: 48px; flex: 0 0 auto; color: var(--scj-primary); }
+.scj-brand-logo__text { display: flex; flex-direction: column; gap: 0.12rem; }
+.scj-brand-logo__name { font-family: var(--scj-font-display); font-size: 1.05rem; font-weight: 800; letter-spacing: 0.05em; }
+.scj-brand-logo__city { color: var(--scj-gold); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.28em; }
+.scj-brand-logo--light { color: #fff; }
+.scj-brand-logo--light:hover { color: #fff; }
+.scj-brand-logo--light .scj-brand-logo__mark { color: var(--scj-primary); }
+.scj-brand-logo--compact .scj-brand-logo__mark { width: 42px; height: 42px; }
+
+.scj-ai-page { min-height: calc(100vh - 130px); }
+.scj-ai-shell { min-height: 620px; height: calc(100vh - 220px); }
+.scj-ai-messages { background: radial-gradient(circle at 50% 0%, rgba(176,141,62,.06), transparent 35%), var(--scj-card); }
+.scj-ai-status { display: inline-flex; align-items: center; gap: .45rem; border: 1px solid rgba(15,47,79,.12); background: rgba(15,47,79,.05); color: var(--scj-primary); border-radius: 999px; padding: .45rem .75rem; font-size: .8rem; font-weight: 700; }
+.scj-ai-status span { width: 8px; height: 8px; border-radius: 50%; background: #2dbb68; box-shadow: 0 0 0 4px rgba(45,187,104,.12); }
+.scj-ai-empty { height: 100%; min-height: 400px; display: grid; place-content: center; justify-items: center; text-align: center; max-width: 560px; margin: auto; }
+.scj-ai-orb { width: 74px; height: 74px; display: grid; place-items: center; border-radius: 24px; color: var(--scj-primary); background: linear-gradient(145deg, rgba(176,141,62,.25), rgba(15,47,79,.1)); box-shadow: inset 0 1px 0 rgba(255,255,255,.7), var(--scj-shadow-md); font-size: 1.8rem; }
+.scj-ai-row { display: flex; align-items: flex-end; gap: .7rem; }
+.scj-ai-row.is-user { justify-content: flex-end; }
+.scj-ai-avatar { width: 34px; height: 34px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 12px; color: var(--scj-gold); background: var(--scj-primary); }
+.scj-ai-bubble { max-width: min(78%, 760px); padding: .85rem 1rem; border-radius: 18px; line-height: 1.6; white-space: pre-wrap; overflow-wrap: anywhere; }
+.scj-ai-bubble.assistant { background: #f3f6f4; color: var(--scj-text); border-bottom-left-radius: 5px; }
+.scj-ai-bubble.user { color: #fff; background: var(--scj-primary); border-bottom-right-radius: 5px; box-shadow: 0 8px 20px rgba(15,47,79,.14); }
+.scj-ai-composer { border-top: 1px solid var(--scj-border); padding: .85rem; background: rgba(255,255,255,.96); }
+.scj-ai-input { resize: none; border-radius: 14px; border-color: var(--scj-border); min-height: 48px; max-height: 140px; padding: .8rem 1rem; box-shadow: none !important; }
+.scj-ai-input:focus { border-color: var(--scj-primary); }
+.scj-ai-composer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .55rem; }
+.scj-ai-typing { display: inline-flex; gap: 4px; align-items: center; min-width: 62px; }
+.scj-ai-typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--scj-text-muted); animation: scjTyping 1.2s infinite ease-in-out; }
+.scj-ai-typing span:nth-child(2) { animation-delay: .15s; }
+.scj-ai-typing span:nth-child(3) { animation-delay: .3s; }
+@keyframes scjTyping { 0%, 60%, 100% { transform: translateY(0); opacity: .45; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+@media (max-width: 768px) {
+  .scj-ai-shell { min-height: 70vh; height: calc(100vh - 190px); }
+  .scj-ai-bubble { max-width: 88%; }
+  .scj-ai-composer-bottom { align-items: flex-end; }
+  .scj-ai-composer-bottom small { font-size: .68rem; }
+  .scj-brand-logo__name { font-size: .92rem; }
+}
+
+/* -----------------------------------------------------------------------
+   Phase 3 — Custom Jamshoro visual system
+   ----------------------------------------------------------------------- */
+.scj-hero {
+  background: radial-gradient(circle at 80% 25%, rgba(176,141,62,.18), transparent 28%), var(--scj-gradient-hero);
+  /* Fixed height (not a huge forced min-height) so the hero never grows
+     taller than its own content and swallows the section below it. */
+  padding-bottom: 4.5rem;
+}
+.scj-hero-row { min-height: 560px; }
+.scj-hero::after {
+  content: ""; position: absolute; inset: auto -10% -120px -10%; height: 220px;
+  background: var(--scj-bg); border-radius: 50% 50% 0 0 / 40% 40% 0 0; opacity: .98;
+  z-index: 0; pointer-events: none;
+}
+.scj-hero > .container { position: relative; z-index: 1; }
+
+/* Floating search card: sits above the hero's bottom edge on large screens,
+   with a proper stacking context so it can never render underneath the
+   hero. On small/medium screens the negative offset is removed entirely
+   so the search card always sits in normal flow, fully visible below the
+   hero instead of being pulled up over hero content. */
+.scj-hero-search-wrap { position: relative; z-index: 3; margin-top: 1.5rem; }
+@media (min-width: 992px) {
+  .scj-hero-search-wrap { margin-top: -4.5rem; }
+}
+.scj-hero-visual { position: relative; padding: 1rem; border: 1px solid rgba(255,255,255,.16); border-radius: 30px; background: rgba(255,255,255,.08); box-shadow: 0 30px 80px rgba(0,0,0,.2); backdrop-filter: blur(8px); }
+.scj-hero-visual img { display: block; border-radius: 22px; box-shadow: 0 18px 50px rgba(0,0,0,.22); }
+.scj-hero-badge { position: absolute; right: 1.5rem; bottom: 1.5rem; display: flex; flex-direction: column; gap: .15rem; padding: .8rem 1rem; border-radius: 14px; background: rgba(10,31,54,.92); color: #fff; border: 1px solid rgba(176,141,62,.55); box-shadow: var(--scj-shadow-md); }
+.scj-hero-badge strong { color: var(--scj-gold-light); }
+.scj-hero-badge span { font-size: .72rem; color: rgba(255,255,255,.72); }
+.scj-category-image { width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px; background: var(--scj-bg); }
+.scj-category-image img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .25s ease; }
+.scj-card:hover .scj-category-image img { transform: scale(1.035); }
+.scj-property-image { background: var(--scj-bg); }
+@media (max-width: 991.98px) { .scj-hero::after { display: none; } .scj-hero-visual { margin-bottom: 2rem; } .scj-hero-row { min-height: 0; } }
+@media (max-width: 575.98px) { .scj-hero-badge { right: 1rem; bottom: 1rem; padding: .65rem .75rem; } .scj-hero-badge span { font-size: .65rem; } }
+
+
+/* Team / Leadership section — professional background treatment.
+   Built from CSS gradients + the project's own hero artwork so there is
+   no dependency on an external/broken image URL. */
+.scj-team-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(10,31,54,.94) 0%, rgba(10,31,54,.88) 55%, rgba(6,17,29,.95) 100%),
+    url("/assets/jamshoro-hero.svg");
+  background-size: cover, 480px auto;
+  background-position: center, right -60px bottom -40px;
+  background-repeat: no-repeat, no-repeat;
+}
+.scj-team-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 15% 20%, rgba(176,141,62,.16), transparent 45%);
+  pointer-events: none;
+}
+.scj-team-section .scj-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(176,141,62,.25);
+  backdrop-filter: blur(4px);
+}
+.scj-team-section .scj-card h3,
+.scj-team-section .scj-card a { color: #fff; }
+.scj-team-section .scj-card .text-muted { color: rgba(255,255,255,.68) !important; }
+.scj-eyebrow--light { color: var(--scj-gold-light, var(--scj-gold)); }
+@media (max-width: 768px) {
+  .scj-team-section { background-size: cover, 300px auto; }
+}
+
+/* Phase 3 final frontend polish */
+.scj-search-button { min-width: 220px; }
+/* Google Maps embeds: make sure nothing in our own stylesheet can ever
+   block drag/pan on the iframe (Bootstrap's `.ratio` positions the iframe
+   absolutely — that's fine for sizing, but we explicitly guarantee
+   pointer events reach it and it isn't clipped in a way that eats
+   mousedown/touchstart before it reaches the map). */
+.ratio iframe[title*="location" i],
+.ratio iframe[title*="map" i] {
+  pointer-events: auto;
+  touch-action: pan-x pan-y;
+}
+.scj-floating-chat__launcher {
+  position: fixed; right: 22px; bottom: 22px; z-index: 1090; width: 58px; height: 58px; border: 0; border-radius: 50%;
+  display: grid; place-items: center; background: var(--scj-gradient-gold); color: var(--scj-primary-dark); font-size: 1.25rem;
+  box-shadow: 0 14px 35px rgba(10,31,54,.25); transition: transform .2s ease;
+}
+.scj-floating-chat__launcher:hover { transform: translateY(-3px) scale(1.03); }
+.scj-floating-chat { position: fixed; right: 22px; bottom: 92px; z-index: 1089; width: min(390px, calc(100vw - 30px)); overflow: hidden; }
+.scj-floating-chat__header { padding: .85rem 1rem; background: var(--scj-gradient-hero); color: #fff; display: flex; justify-content: space-between; align-items: center; }
+.scj-floating-chat__header small { display: block; color: rgba(255,255,255,.65); font-size: .68rem; }
+.scj-floating-chat__icon { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 11px; background: rgba(176,141,62,.18); color: var(--scj-gold-light); }
+.scj-floating-chat__messages { height: 330px; overflow: auto; padding: .9rem; background: #f7f9f8; display: flex; flex-direction: column; gap: .65rem; }
+.scj-floating-chat__bubble { max-width: 88%; padding: .65rem .8rem; border-radius: 14px; font-size: .85rem; line-height: 1.5; white-space: pre-wrap; }
+.scj-floating-chat__bubble.user { align-self: flex-end; background: var(--scj-primary); color: #fff; border-bottom-right-radius: 4px; }
+.scj-floating-chat__bubble.assistant { align-self: flex-start; background: #fff; border: 1px solid var(--scj-border); color: var(--scj-text); border-bottom-left-radius: 4px; }
+.scj-property-image { min-height: 280px; }
+.scj-nav-topline { background: var(--scj-primary-dark); color: rgba(255,255,255,.8); font-size: .72rem; }
+@media (max-width: 767.98px) {
+  .scj-search-button { width: 100%; }
+  .scj-floating-chat { right: 15px; bottom: 84px; }
+  .scj-floating-chat__launcher { right: 15px; bottom: 15px; }
+}

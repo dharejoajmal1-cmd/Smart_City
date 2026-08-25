@@ -1,0 +1,10 @@
+const express=require('express');
+const {protect}=require('../middleware/auth');
+const {admin}=require('../middleware/admin');
+const {listAgreements,getAgreement}=require('../controllers/agreementController');
+const {completeDeal}=require('../controllers/inquiryController');
+const router=express.Router();
+router.get('/',protect,listAgreements);
+router.get('/:id',protect,getAgreement);
+router.post('/complete/:id',protect,admin,completeDeal);
+module.exports=router;

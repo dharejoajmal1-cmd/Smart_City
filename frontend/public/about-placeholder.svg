@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420">
+  <rect width="600" height="420" fill="#0f2f4f"/>
+  <g opacity="0.25" fill="#b08d3e">
+    <rect x="40" y="260" width="70" height="120"/>
+    <rect x="130" y="220" width="70" height="160"/>
+    <rect x="220" y="180" width="70" height="200"/>
+    <rect x="310" y="240" width="70" height="140"/>
+    <rect x="400" y="200" width="70" height="180"/>
+    <rect x="490" y="250" width="70" height="130"/>
+  </g>
+  <text x="300" y="60" font-family="Georgia, serif" font-size="28" fill="#b08d3e" text-anchor="middle">Smart City Jamshoro</text>
+  <text x="300" y="90" font-family="Arial" font-size="14" fill="#ffffffaa" text-anchor="middle">A Master-Planned City</text>
+</svg>
